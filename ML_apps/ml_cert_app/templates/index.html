@@ -103,7 +103,7 @@
                 body: JSON.stringify({data: values})
             });
             const result = await res.json();
-            document.getElementById("result").innerText = "✅ Result: " + result.prediction;
+            document.getElementById("result").innerText = " Result: " + result.prediction;
         });
 
         // Handle CSV Upload
@@ -125,7 +125,7 @@
             });
 
             if (!response.ok) {
-                document.getElementById("result").innerText = "❌ Error uploading file.";
+                document.getElementById("result").innerText = " Error uploading file.";
                 return;
             }
 
@@ -139,7 +139,7 @@
             a.download = "certificate_results.csv";
             a.click();
 
-            document.getElementById("result").innerText = "✅ File processed and downloaded!";
+            document.getElementById("result").innerText = " File processed and downloaded!";
         });
     </script>
 </body>

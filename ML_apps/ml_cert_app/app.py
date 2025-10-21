@@ -8,18 +8,11 @@ import io
 app = Flask(__name__)
 # Load trained model
 model = joblib.load("model_trainer/certificate_model.pkl")
-print("✅ ML model loaded successfully!")
+print("ML model loaded successfully!")
 
 # ---- Load Model ----
-# For now, we’ll simulate a model
-# Later, you can replace this with a real ML model (e.g., pickle.load)
 def mock_model_predict(data):
-    # Example: "pass" if score > 0.5 else "fail"
-    score = np.mean(data)
-    if score < 0.5:
-        return "Fail"
-    else:
-        return "Pass"
+    return model.predict(data)
 
 # ---- Web UI ----
 @app.route('/')
